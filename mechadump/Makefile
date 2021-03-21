@@ -16,7 +16,7 @@ BIN_OBJECTS = $(PATCH_OBJECTS) $(PAYLOAD_OBJECTS) $(IRX_OBJECTS)
 
 C_OBJECTS = 
 TARGET_C_OBJECTS = $(foreach obj,$(C_OBJECTS),$(BIN_DIR)/$(obj))
-CXX_OBJECTS = configexploit.o dumper.o mechadump.o sysinfo.o
+CXX_OBJECTS = configexploit.o dumper.o knowndumps.o mechadump.o sysinfo.o
 TARGET_CXX_OBJECTS = $(foreach obj,$(CXX_OBJECTS),$(BIN_DIR)/$(obj))
 
 EE_DEFINES = -D_EE -G0
@@ -49,7 +49,7 @@ $(BIN_DIR):
 $(OUT_DIR):
 	mkdir $@
 
-$(EXE): $(TARGET_C_OBJECTS) $(TARGET_CXX_OBJECTS) $(BIN_OBJECTS) | $(OUT_DIR)
+$(EXE): $(TARGET_C_OBJECTS) $(TARGET_CXX_OBJECTS) $(BIN_OBJECTS) $(LIB_DIR)/libmechacrypto.a | $(OUT_DIR)
 	$(LD) $(LDFLAGS) -L$(LIB_DIR) $^ $(LIBS) -o $@
 
 $(TARGET_C_OBJECTS): $(BIN_DIR)/%.o: %.c | headers

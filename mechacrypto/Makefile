@@ -5,6 +5,8 @@ endif
 
 C_OBJECTS = cipher.o crc32.o util.o
 TARGET_C_OBJECTS = $(foreach obj,$(C_OBJECTS),$(BIN_DIR)/$(obj))
+CXX_OBJECTS = sha256.o
+TARGET_CXX_OBJECTS = $(foreach obj,$(CXX_OBJECTS),$(BIN_DIR)/$(obj))
 
 LIBRARY = $(OUT_DIR)/libmechacrypto$(OUT_SUFFIX).a
 
@@ -28,15 +30,13 @@ $(BIN_DIR):
 $(OUT_DIR):
 	mkdir $@
 
-$(LIBRARY): $(TARGET_C_OBJECTS) | $(OUT_DIR)
+$(LIBRARY): $(TARGET_C_OBJECTS) $(TARGET_CXX_OBJECTS) | $(OUT_DIR)
 	rm -f $@
 	$(AR) -crs $@ $^
 
-# Will need to fix...
-#$(TARGET_C_OBJECTS): $(BIN_DIR)/%.o: %.cpp
-#	$(CXX) $(CXXFLAGS) -c $^ -o $@
-
 $(TARGET_C_OBJECTS): $(BIN_DIR)/%.o: %.c | $(BIN_DIR) headers
 	$(CC) $(CCFLAGS) -c $^ -o $@
+$(TARGET_CXX_OBJECTS): $(BIN_DIR)/%.o: %.cpp | $(BIN_DIR) headers
+	$(CXX) $(CXXFLAGS) -c $^ -o $@
 
-headers: *.h
+headers: *.h *.hpp

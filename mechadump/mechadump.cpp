@@ -22,13 +22,14 @@
 
 #include "configexploit.hpp"
 #include "dumper.hpp"
+#include "knowndumps.hpp"
 #include "sysinfo.hpp"
 
 #include "crc32.h"
 
 
 constexpr int c_versionMajor = 1;
-constexpr int c_versionMinor = 0;
+constexpr int c_versionMinor = 1;
 
 
 extern "C" unsigned int size_irx_fileXio;
@@ -904,6 +905,29 @@ bool Stage_DumpMechaconROM()
 		scr_printf("          Success!  File dumped as %s\n", dumpPath.c_str());
 	else
 		scr_printf("          FAILED!  Could not write file to USB\n");
+
+	// Is this a known version?
+	sha256::digest digest;
+	sha256 sha256;
+	sha256.reset();
+	sha256.process(rom.data(), rom.size());
+	sha256.finish(digest);
+	debug.Printf("Firmware digest: ");
+	for (size_t i = 0; i < sizeof(digest); ++i)
+	{
+		debug.Printf("%02x", digest[i]);
+	}
+	debug.Printf("\n");
+	
+	if (!IsKnownDump(digest))
+	{
+		scr_printf("          ");
+		scr_setbgcolor(0xFF000080);
+		scr_printf("Unknown Version!!");
+		scr_setbgcolor(0xFF800000);
+		scr_printf("  Please send it.\n");
+		scr_printf("\n");
+	}
 	
 	scr_printf("          Press X or O to continue.\n");
 	WaitForXorOConfirm();

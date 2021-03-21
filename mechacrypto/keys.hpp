@@ -12,6 +12,8 @@
 template <int Part>
 constexpr std::uint64_t CompileTimeSHA256Part(std::uint64_t data)
 {
+	using namespace sha256_internal;
+
 	sha256_word state[8]{};
 	sha256_init(state);
 
