@@ -29,7 +29,7 @@
 
 
 constexpr int c_versionMajor = 1;
-constexpr int c_versionMinor = 1;
+constexpr int c_versionMinor = 2;
 
 
 extern "C" unsigned int size_irx_fileXio;
@@ -595,9 +595,9 @@ bool Stage_RestoreNVM()
 	scr_clear();
 	
 	scr_setXY(10, 5);
-	scr_printf("EEPROM Backup");
+	scr_printf("EEPROM Restore");
 	scr_setXY(10, 7);
-	scr_printf("Are you sure you want to restore up your EEPROM from USB?");
+	scr_printf("Are you sure you want to restore your EEPROM from USB?");
 	
 	std::vector<MenuOption> menuOptions;
 	menuOptions.emplace_back(MenuOption{ "NO", true });
