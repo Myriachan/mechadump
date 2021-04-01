@@ -9,7 +9,6 @@ MechaDump is a program to dump the firmware from "Dragon"-series PS2 Mechacon ch
 Please follow these directions.  Bad things could happen if something goes wrong.
 
 1. Verify that you have a compatible PS2.  It needs to be an SCPH-500xx, a "slim", or a "PSX" (the DVR PS2).  Earlier consoles are not supported.
-1. You'll need a PS2 controller.  PS1 controllers don't work yet.
 1. Set up a way to run PS2 ELF files.
    1. Free McBoot on most consoles - only some SCPH-900xx systems aren't supported
    1. OpenTuna or Fortuna - not as convenient, but works on FMCB-incompatible SCPH-900xx systems
