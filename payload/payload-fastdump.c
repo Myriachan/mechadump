@@ -4,7 +4,7 @@
 typedef struct PatchRegisterSet_
 {
 	uint8_t m_enable;
-	uint8_t m_dummy[0];
+	uint8_t m_dummy[3];
 	uint32_t m_target;
 	uint32_t m_value;
 	uint32_t m_dummy2;
