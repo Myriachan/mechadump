@@ -166,7 +166,8 @@ void ResetEverything(bool isPS2Link)
 
 bool GetPressedButtons(int& buttons)
 {
-	if (padGetState(0, 0) != PAD_STATE_STABLE)
+	int state = padGetState(0, 0);
+	if (state == PAD_STATE_DISCONN || state == PAD_STATE_EXECCMD || state == PAD_STATE_ERROR)
 		return false;
 	
 	struct padButtonStatus status;
