@@ -48,7 +48,7 @@ You need:
   * https://github.com/ps2dev/ps2sdk
 * An ARM32 GCC and G++ installed in Linux.
   * The Ubuntu package `gcc-arm-none-eabi` will work.
-  * The 3DS homebrew SDK might work, but I haven't tried.  https://www.3dbrew.org/wiki/Setting_up_Development_Environment
+  * The 3DS homebrew SDK might work, but I haven't tried.  [3DBrew: Setting up Development Environment](https://www.3dbrew.org/wiki/Setting_up_Development_Environment)
 * Two secret keys, which aren't provided here, but are easy to find online.
   * `MECHA_PATCH_KEY`
   * `GLOBAL_FLAGS_KEY`
