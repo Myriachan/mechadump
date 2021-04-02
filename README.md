@@ -30,12 +30,9 @@ switch in the back.  On other systems, you'll need to pull the power plug.
 1. When it's done, return to the MechaDump main menu and select "Restore EEPROM".
 1. After the restore, your system will automatically turn off, and will be back to normal.  You don't need to remove power again.
 1. The dump is done!  You will find "mechacon-_version_-_date_.bin" and "mechacon-keystore.bin" on your USB stick.
-1. Return to the main menu, and select "Restore EEPROM".
 
 **DO NOT** leave your system in the "back door" state.  Restore your EEPROM before using your PS2 normally again.  Failure to do this could result in reliability issues:
 Sony fixed bugs in the Mechacon at the factory, and MechaDump's back door disables these patches.  Restoring EEPROM will reinstall the patches.
-
-Use the "Restore EEPROM" to restore your patches from the backup you made.  This time, MechaDump will power off your machine; unplugging will not be required.
 
 ## Building
 Compiling MechaDump is easy...once you get the prerequisites, which is the hard part.  We need 3 different versions of GCC: one for the machine doing the compile, one for the PS2
