@@ -743,7 +743,7 @@ void Stage_InstallHack()
 
 	std::vector<MenuOption> menuOptions;
 	menuOptions.emplace_back(MenuOption{ "Cancel", true });
-	menuOptions.emplace_back(MenuOption{ "CD Protect Hook (safer, but requires a legitimate game disc)",
+	menuOptions.emplace_back(MenuOption{ "Disc Protect Hook (safer, but requires a legitimate game disc)",
 		true });
 	menuOptions.emplace_back(MenuOption{ "IRQ Hook (riskier, but doesn't need drive at all)", true });
 
@@ -954,7 +954,7 @@ bool Stage_DumpMechaconROM()
 		switch (nvmState)
 		{
 			case NVM_STATE_CDPROTECT_HOOK:
-				nvmStateString = "Backdoored (CD Protect)";
+				nvmStateString = "Backdoored (Disc Protect)";
 				allowNVMBackup = false;
 				backdoorInstalled = true;
 				break;
