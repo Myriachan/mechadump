@@ -29,7 +29,7 @@
 
 
 constexpr int c_versionMajor = 1;
-constexpr int c_versionMinor = 2;
+constexpr int c_versionMinor = 3;
 
 
 extern "C" unsigned int size_irx_fileXio;
