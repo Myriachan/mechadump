@@ -19,13 +19,13 @@ Please follow these directions.  Bad things could happen if something goes wrong
 1. At the main menu, **BACK UP YOUR EEPROM**.
 1. After EEPROM is backed up, select "Install Backdoor".
 1. From here, you have two choices:
-   1. "CD Protect Hook" back door.  This option is safer, but requires a legitimate PS2 disc for your PS2's region, and a working PS2 CD drive to read it.
-   1. "IRQ Hook" back door.  This is more dangerous, but doesn't require a legitimate PS2 disc or a working PS2 CD drive.
+   1. "Disc Protect Hook" back door.  This option is safer, but requires a legitimate PS2 disc for your PS2's region, and a working PS2 disc drive to read it.
+   1. "IRQ Hook" back door.  This is more dangerous, but doesn't require a legitimate PS2 disc or a working PS2 disc drive.
 1. Once it is installed, you need to _remove power from the machine_.  Turning off the normal way _will not work_.  On the "fat" system (SCPH-500xx), you can flip the power
 switch in the back.  On other systems, you'll need to pull the power plug.
 1. Turn your system back on and return to mechadump.elf.
 1. At the main menu, this time select "Dump Mechacon ROM", which should no longer be grayed out.
-   1. If using "CD Protect Hook", you may be prompted to insert a legitimate disc.  Do it when asked.
+   1. If using "Disc Protect Hook", you may be prompted to insert a legitimate disc.  Do it when asked.
 1. This will take a bit (~5 minutes).
 1. When it's done, return to the MechaDump main menu and select "Restore EEPROM".
 1. After the restore, your system will automatically turn off, and will be back to normal.  You don't need to remove power again.
