@@ -33,7 +33,7 @@ clean:
 	rm -f $(OUT_DIR)/payload-fastdump.bin $(BIN_DIR)/payload-fastdump.elf $(BIN_DIR)/payload-fastdump.o
 	rm -f $(OUT_DIR)/payload-writenvm.bin $(BIN_DIR)/payload-writenvm.elf $(BIN_DIR)/payload-writenvm.o
 	rm -f $(OUT_DIR)/payload-keystoredump.bin $(BIN_DIR)/payload-keystoredump.elf \
-		$(BIN_DIR)/payload-keystoredump.o
+		$(BIN_DIR)/payload-keystoredump.o  $(BIN_DIR)/payload-crt0.o
 
 $(OUT_DIR)/payload-fastdump.bin: $(BIN_DIR)/payload-fastdump.elf
 	$(OBJCOPY) $(OBJCOPYFLAGS) $(BIN_DIR)/payload-fastdump.elf $(OUT_DIR)/payload-fastdump.bin
